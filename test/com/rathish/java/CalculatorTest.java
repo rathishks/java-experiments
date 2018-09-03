@@ -9,24 +9,7 @@ import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Calculator {
-
-    private Integer sum =0;
-
-    public void setSum(Integer sum){
-        this.sum =  sum;
-    }
-
-    public Integer getSum(){
-        return sum;
-    }
-
-    public synchronized void increment(){
-        setSum(getSum() + 1);
-    }
-}
-
-public class TestSynchronized {
+public class CalculatorTest {
     @Test
     public void givenMultiThread_whenNonSyncMethod() throws InterruptedException {
         ExecutorService service = Executors.newFixedThreadPool(3);
